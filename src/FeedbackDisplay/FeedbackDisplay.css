@@ -1,0 +1,125 @@
+:root {
+    --primary-color: #3a4f7a;
+    --secondary-color: #fbc252;
+    --background-color: #f8f9fa;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-background: #ffffff;
+}
+  
+
+  
+.feedback-display-container {
+    max-width: 1200px;
+    padding: 2rem;
+}
+  
+.feedback-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+   
+}
+  
+.feedback-item {
+    flex: 1 1 400px;
+     /* border:1px solid red;  */
+    max-width: calc(50% - 1rem);
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.649); 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+  
+.feedback-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+  
+.display-feedback-input {
+    display: flex;
+    flex-direction: column;
+}
+  
+.display-feedback-input p {
+    font-size: 1rem;
+    margin: 0;
+    font-family: sans-serif;
+    word-wrap: break-word; /* Allow long words to break and wrap */
+    overflow-wrap: break-word; /* Alternative property for better browser support */
+}
+  
+.display-feedback-input strong {
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+  
+.display-feedback-input p:first-child {
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    /* border:1px solid red; */
+    align-items: center;
+}
+  .feedback-user strong{
+    flex-grow:1;
+    /* border:1px solid red; */
+  }
+  .feedback-user button{
+    /* border:1px solid red; */
+    flex-grow:1;
+  }
+.menu-button{
+    background-color: transparent;
+    color:black;
+    padding:0;
+    margin:0;
+    /* margin-left:0.2rem; */
+    text-align: right;
+}
+.menu-button :hover{
+    color:red;
+    background-color: transparent;
+}
+
+
+
+
+/* Ensure long content doesn't overflow */
+.display-feedback-input p strong,
+.display-feedback-input p span {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/* Style for long content that might need to be truncated */
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 1079px) {
+    .feedback-display-container {
+        padding: 1rem;
+    }
+
+    .feedback-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .feedback-item {
+        max-width: calc(50% - 1.334rem);
+    }
+}
